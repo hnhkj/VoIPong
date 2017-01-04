@@ -45,12 +45,12 @@ modules: modvocoder_pcmu modvocoder_pcma
 modvocoder_pcmu:
 	$(CLEARX)
 	$(CC) -fPIC $(CFLAGS) -c modvocoder_pcmu.c
-#	$(CC) -shared -nostdlib -o modvocoder_pcmu.so modvocoder_pcmu.o
+	$(CC) -shared -nostdlib -o modvocoder_pcmu.so modvocoder_pcmu.o
 
 modvocoder_pcma:
 	$(CLEARX)
 	$(CC) -fPIC $(CFLAGS) -c modvocoder_pcma.c
-#	$(CC) -shared -nostdlib -o modvocoder_pcma.so modvocoder_pcma.o
+	$(CC) -shared -nostdlib -o modvocoder_pcma.so modvocoder_pcma.o
 
 install:
 	mkdir -p /usr/local/etc/voipong
@@ -61,7 +61,7 @@ install:
 	chmod 750 /usr/local/bin/voipong
 	chmod 750 /usr/local/bin/voipctl
 	chmod 600 /usr/local/etc/voipong/voipong.conf
-	#cp modvocoder_*.so /usr/local/etc/voipong/modules/
+	cp modvocoder_*.so /usr/local/etc/voipong/modules/
 	chmod 500 /usr/local/etc/voipong/modules/*
 
 cls:
